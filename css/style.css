@@ -1,98 +1,52 @@
-/* General */
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    margin: 0;
+    background-color: #dedede;
 }
 
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-h1, h2 {
+h1 {
     text-align: center;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
 }
 
 p {
+    font-size: 25px;
     text-align: center;
-    padding: 0 10px;
-    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
-/* MOBILE FIRST */
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-}
-
-/* Figures */
-figure {
-    border: 2px solid #ccc;
-    padding: 10px;
-    background-color: white;
-    text-align: center;
-}
-
-/* Images */
-figure img {
+img {
     width: 100%;
 }
 
-/* Caption */
-figcaption {
-    margin-top: 8px;
-    font-weight: bold;
+/* Images inside div */
+div img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
 }
 
-/* TABLET (772px) */
+/* MOBILE (default) */
+div {
+    display: block;
+    width: 100%;
+}
+
+/* TABLET */
 @media (min-width: 772px) {
-    main {
-        grid-template-columns: 1fr 1fr;
+    div {
+        width: 45%;
+        display: inline-block;
     }
 
-    figure {
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    figure:last-child {
-        grid-column: span 2;
+    img {
+        max-height: 30vh;
     }
 }
 
-/* LARGE (992px) */
-@media (min-width: 992px) {
-    /* KEEP 2 columns (do NOT change grid) */
-
-    figure {
-        border-radius: 0;
-    }
-
-    figure:nth-of-type(3n) {
-        grid-column: span 2;
-    }
-}
-
-/* REDUCED MOTION */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-}
-
-/* DARK MODE */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #111;
-    }
-
-    figure {
-        background-color: #222;
-        color: #ffeb3b; /* yellow-ish */
-        border: 2px solid black;
+/* LARGE */
+@media (min-width: 998px) {
+    div {
+        width: 30%;
     }
 }
